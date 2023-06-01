@@ -24,6 +24,16 @@ return {
     underline = true,
   },
   lsp = {
+    config = {
+      eslint = {
+        on_attach = function(_, bufnr)
+          vim.api.nvim_create_autocmd("BufWritePre", {
+          buffer = bufnr,
+          command = "EslintFixAll",
+        })
+      end,
+      }
+    },
     -- customize lsp formatting options
     formatting = {
       -- control auto formatting on save
@@ -40,6 +50,7 @@ return {
         },
       },
       disabled = { -- disable formatting capabilities for the listed language servers
+        "tsserver"
         -- "sumneko_lua",
       },
       timeout_ms = 1000, -- default format timeout
@@ -78,10 +89,10 @@ return {
     --     ["~/%.config/foo/.*"] = "fooscript",
     --   },
     -- }
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      desc = "Fix all eslint/prettier problems",
-      pattern = { "*.ts", "*.tsx", "*.js", "*.jsx" },
-      command = "EslintFixAll"
-    })
+    -- vim.api.nvim_create_autocmd("BufWritePre", {
+    --   desc = "Fix all eslint/prettier problems",
+    --   pattern = { "*.ts", "*.tsx", "*.js", "*.jsx" },
+    --   command = "EslintFixAll"
+    -- })
   end,
 }

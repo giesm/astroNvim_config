@@ -5,11 +5,15 @@ return {
     "williamboman/mason-lspconfig.nvim",
     -- overrides `require("mason-lspconfig").setup(...)`
     opts = {
-      ensure_installed = { "lua_ls",
+      ensure_installed = {
+        "lua_ls",
         "cssls",
         "html",
         "jsonls",
-        "eslint" },
+        "eslint",
+        "tsserver",
+        "bashls"
+      },
     },
   },
   -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
@@ -17,7 +21,7 @@ return {
     "jay-babu/mason-null-ls.nvim",
     -- overrides `require("mason-null-ls").setup(...)`
     opts = {
-      -- ensure_installed = { "prettier", "stylua" },
+      ensure_installed = { "prettier", "buf", "gitrebase", "commitlint" },
     },
   },
   {

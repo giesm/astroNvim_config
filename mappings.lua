@@ -20,6 +20,49 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    ["<leader>pn"] = { name = "Package Info" },
+    ["<leader>pns"] = {
+      function()
+        require("package-info").show()
+      end,
+      desc = "Show dependency versions"
+    },
+    ["<leader>pnc"] = {
+      function()
+        require("package-info").hide()
+      end,
+      desc = "Hide dependency versions"
+    },
+    ["<leader>pnt"] = {
+      function()
+        require("package-info").toggle()
+      end,
+      desc = "Toggle dependency versions"
+    },
+    ["<leader>pnu"] = {
+      function()
+        require("package-info").update()
+      end,
+      desc = "Update dependency on the line"
+    },
+    ["<leader>pnd"] = {
+      function()
+        require("package-info").delete()
+      end,
+      desc = "Delete dependency on the line"
+    },
+    ["<leader>pni"] = {
+      function()
+        require("package-info").install()
+      end,
+      desc = "Install a new dependency"
+    },
+    ["<leader>pnp"] = {
+      function()
+        require("package-info").change_version()
+      end,
+      desc = "Change version manually"
+    },
   },
   t = {
     -- setting a mapping to false will disable it

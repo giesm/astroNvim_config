@@ -1,6 +1,6 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   opts = {
-    ensure_installed = { "lua", "css", "diff", "git_rebase", "gitcommit", "html", "javascript", "proto", "typescript", },
+    ensure_installed = { "lua", "bash", "comment", "css", "diff", "git_rebase", "gitcommit", "html", "javascript", "proto", "typescript", "tsx" },
   },
 }
